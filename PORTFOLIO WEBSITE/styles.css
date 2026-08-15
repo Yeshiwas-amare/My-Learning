@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(2, 13, 27);
+    color: white;
+}
+
+header {
+    background-color: rgb(3, 67, 82);
+    color: rgb(254, 255, 255);
+    padding: 1.5rem 0;
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-left: 40px;
+    row-gap: 6px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #1b06f8;
+}
+
+/* hero section CSS*/
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    background: #b5e5e9;
+    align-items: center;
+    text-align: center;
+    color: #231818;
+    padding: 80px 10px 0;
+}
+
+.hero-content {
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    font-family: sans-serif, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.btn {
+    background-color: green;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #013c8e;
+}
+
+/* about section css */
+#about {
+    padding: 80px 10px;
+    text-align: center;
+    background-color: #021b24;
+    color: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #00bfff;
+    box-shadow: 0 0 30px rgba(0, 191, 255, .4);
+    transition: .4s;
+    /* move image upward */
+    object-position: center top;
+}
+
+.about-image img:hover {
+    transition: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 191, 255, .8);
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.about-content h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-content span {
+    color: #00bfff;
+}
+
+.about-content p {
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.about-content p a {
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
+
+.about-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #00bfff;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #0099cc;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #00bfff;
+    color: #00bfff;
+}
+
+.btn-outline:hover {
+    background: #00bfff;
+    color: #081b29;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content p {
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-buttons {
+        justify-content: center;
+    }
+}
+
+/* this is the projects section CSS */
+
+.projects {
+    padding: 100px 10%;
+    background-color: #013a3b;
+}
+
+.section-tittle {
+    text-align: center;
+    color: #fff;
+    font-size: 45px;
+    margin-bottom: 60px;
+}
+
+.projects h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.project-card {
+    background: #112e42;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.35);
+    text-align: center;
+    transition: .4s ease;
+}
+
+.project-image {
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px 20pz 0 0;
+    transition: .5s;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+    box-shadow: 0 15px 40px rgba(0, 191, 255, .45);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.project-content p {
+    color: #d6e6ef;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tech-stack span {
+    background: #00bfff;
+    color: #081b29;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.live-btn,
+.github-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.live-btn {
+    background: #00bfff;
+    color: #081b29;
+}
+
+.live-btn:hover {
+    background: #fff;
+}
+
+.github-btn {
+    border: 2px solid #00bfff;
+    color: #00bfff;
+}
+
+.github-btn:hover {
+    background: #00bfff;
+    color: #081b29;
+}
+
+.live-btn:hover,
+.github-btn:hover {
+    transform: translateY(-3px);
+}
+
+@media(max-width:768px) {
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+    }
+
+}
+
+.project-card h3 {
+    margin: 15px 0px;
+}
+
+/* contact section CSS */
+.contact {
+    padding: 50px 20px;
+    background-color: #032e2e;
+}
+
+.contact h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: auto;
+    color: white;
+}
+
+.contact p a {
+    text-decoration: none;
+    background-color: transparent;
+    color: white;
+}
+
+#contact-form {
+    max-width: 600px;
+    width: 380px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+    align-items: center;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#contact-form button {
+    width: 180px;
+    display: auto;
+    justify-content: center;
+    background-color: blue;
+    color: #fff;
+    padding: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+#contact-form button:hover {
+    background-color: green;
+}
+
+/* footer Css section */
+footer {
+    background-color: #012425;
+    color: white;
+    text-align: center;
+    padding: 18px 0;
+}
+
+.social-links {
+    margin-top: 10px
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: all .3s ease;
+}
+
+.social-links a:hover {
+    color: #0202ce;
+}
+
+html {
+    scroll-behavior: smooth;
+}

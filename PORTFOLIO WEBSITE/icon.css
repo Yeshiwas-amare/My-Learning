@@ -1,0 +1,98 @@
+/* ===========================
+   SOCIAL MEDIA ICONS
+=========================== */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition: all .35s ease;
+}
+
+/* Hover Animation */
+.social-icons a:hover {
+    transform: translateY(-8px) scale(1.12);
+}
+
+/* GitHub */
+.social-icons a:nth-child(1):hover {
+    background: #24292e;
+    box-shadow: 0 0 25px #24292e;
+}
+
+/* LinkedIn */
+.social-icons a:nth-child(2):hover {
+    background: #0A66C2;
+    box-shadow: 0 0 25px #0A66C2;
+}
+
+/* X (Twitter) */
+.social-icons a:nth-child(3):hover {
+    background: #000;
+    box-shadow: 0 0 25px #ffffff;
+}
+
+/* Facebook */
+.social-icons a:nth-child(4):hover {
+    background: #1877F2;
+    box-shadow: 0 0 25px #1877F2;
+}
+
+.social-icons i {
+    transition: .35s;
+}
+
+.social-icons a:hover i {
+    transform: rotate(360deg);
+}
+
+/* Responsive */
+
+@media(max-width:768px) {
+
+    .social-icons {
+        gap: 16px;
+    }
+
+    .social-icons a {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .social-icons a {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+}
