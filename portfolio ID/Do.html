@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAILE ID Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e7eef7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            height: 100vh;
+        }
+
+        .id-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            width: 650px;
+            height: auto;
+            min-height: 310px;
+            background: white;
+
+            border-radius: 6;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+
+            border: 2px solid #000000;
+            box-sizing: border-box;
+            padding: 0;
+            s
+        }
+
+        /* Side Stripes */
+        .id-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 8px;
+            height: 100%;
+            background: white;
+            z-index: 2;
+        }
+
+        .id-card::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 8px;
+            height: 100%;
+            background: white;
+            z-index: 2;
+        }
+
+        /* Header */
+        .header {
+            background: #202122;
+            color: white;
+            padding: 12px 15px 12px 30px;
+        }
+
+        .header h2 {
+            font-size: 22px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .header p {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 2px;
+            font-weight: bold;
+        }
+
+        /* Body */
+        .body {
+
+            display: flex;
+            flex: auto;
+            padding: 15px 15px 10px 30px;
+        }
+
+        /* Photo Section Fixes */
+        .photo-section {
+            width: 110px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo {
+            width: 120px;
+            height: 138px;
+            border: 2px solid #ddd;
+            border-radius: 2px;
+            overflow: hidden;
+            display: block;
+            background-color: #ffffff;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            border: 2px solid black;
+            background-color: #ffffff;
+        }
+
+        .batch {
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d0d0e;
+            margin-top: 10px;
+        }
+
+        .issue {
+            font-weight: bold;
+            width: 100%;
+            font-size: 12px;
+            text-align: left;
+            color: #333;
+        }
+
+        .issue-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            margin-top: 4px;
+            white-space: nowrap;
+            gap: 3px;
+        }
+
+        .issue-label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .issue-value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #111;
+        }
+
+        /* Details Section */
+        .details {
+            margin-left: 15px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .details h3 {
+            color: #000;
+            margin: 0 0 8px 0;
+            font-size: 22px;
+        }
+
+        /* Information Layout using Flexbox */
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .info-row {
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+        }
+
+        /* Pushes both label and value completely to the right edge */
+        .info-row.push-right {
+            justify-content: flex-end;
+            padding-right: 150px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .value {
+            color: #111;
+            font-weight: 1000;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            height: auto;
+            display: flex;
+            justify-content: center;
+            background: #fafafa;
+            align-items: center;
+            padding: 8px 5px;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Barcode */
+        .barcode-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 41px;
+        }
+
+        .barcode-container img {
+            width: 500px !important;
+            max-width: 90%;
+            height: 30px;
+            object-fit: fill;
+            display: block;
+        }
+
+        .barcode-id {
+            margin-top: 2px;
+            font-size: 14px;
+            color: #444;
+            font-weight: bold;
+        }
+
+        /* Bottom Stripe */
+        .note-links {
+            height: 23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            color: white;
+            font-size: 13px;
+            text-align: center;
+            padding: 0 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="id-card">
+
+        <div class="header">
+            <h2>CYBER TALENT CENTER</h2>
+            <p>STUDENT IDENTITY CARD</p>
+        </div>
+
+        <div class="body">
+
+            <div class="photo-section">
+                <div class="photo">
+                    <img src="images/profiles.jpg" alt="profiles">
+                </div>
+                <p class="batch">Batch: 2026</p>
+                <div class="issue-row">
+                    <span class="issue-label">Issued Date:</span>
+                    <span class="issue-value">25 JUL 2026</span>
+                </div>
+            </div>
+
+            <div class="details">
+                <h3>YESHIWAS AMARE MAMO</h3>
+
+                <div class="info">
+                    <div class="info-row">
+                        <span class="label">CTC ID:</span>
+                        <span class="value">CTC-2790-26</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">Gender:</span>
+                        <span class="value">Male</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">Phone:</span>
+                        <span class="value">+251 963 171 103</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">FAN PIN:</span>
+                        <span class="value">6046943715785105</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">Educ Level:</span>
+                        <span class="value">Undergraduate</span>
+                    </div>
+
+                    <!-- Program row aligned to the right -->
+                    <div class="info-row push-right">
+                        <span class="label">Program:</span>
+                        <span class="value">INSA TALENT</span>
+                    </div>
+
+                    <!-- Expiry row aligned to the right -->
+                    <div class="info-row push-right">
+                        <span class="label">Expiry Date:</span>
+                        <span class="value">28 AUG 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="barcode-container">
+                <img src="images/barcode.jpg" alt="barcode">
+                <p class="barcode-id">CTC-2790-26</p>
+            </div>
+        </div>
+
+        <div class="note-links">
+            https://ctc.insa.gov.et | Wollo Sefer Addis Ababa Ethiopia
+        </div>
+
+    </div>
+
+</body>
+
+</html>
